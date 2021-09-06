@@ -31,7 +31,7 @@ import { HandleMediaService } from '../handle-media.service';
 export class MediaComponent implements OnInit {
   constructor(private mediaService: HandleMediaService) { }
   mediaUrl = "twitter.com";
-  thumbnailUrl = "../assets/neural_net_pepe.jpg"
+  thumbnailUrl = ""
   newThumbnailUrl = this.thumbnailUrl
   downloadLocation = ""
   dlErr = undefined
