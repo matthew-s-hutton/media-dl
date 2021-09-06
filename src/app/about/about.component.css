@@ -1,0 +1,20 @@
+div.about-container {
+    border-radius: 5px;
+    background-color: whitesmoke;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    font-size: 24px;
+    color: rgb(133, 133, 133);
+}
+
+a {
+    font-size: 24px;
+    color: rgb(73,79,82);
+    text-decoration: none;
+}

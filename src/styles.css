@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: rgb(179,180,187);
+}
+
+p {
+    font-size: 2em;
+}
+
+ul {
+    font-size: 1.4em;
+}
+
+.ui {
+    background: rgb(73,79,82);
+}

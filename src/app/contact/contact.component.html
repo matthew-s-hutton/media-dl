@@ -1,0 +1,11 @@
+<section class="mail-container">
+    <label for="mail-address">Email Address</label>
+    <input id="mail-address" [(ngModel)]="userData.mailAddress">
+    <label for="mail-subject">Subject</label>
+    <input id="mail-subject" [(ngModel)]="userData.mailSubject">
+    <label for="mail-body">Body</label>
+    <textarea id="mail-body" [(ngModel)]="userData.mailBody" class="mail-body"></textarea>
+    <button class="ui" (click)="sendEmailWrapper()">Send</button>
+</section>
+
+
