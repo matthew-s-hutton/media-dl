@@ -1,10 +1,29 @@
-<ul class="top ui">
-    <li><nav><a routerLink="dl">{{title}}</a></nav></li>
+<ul class="top">
+    <li *ngFor="let item of menuItems">
+        <nav *ngIf="!item.reactiveCompress">
+            <a class="home-button nav-a-colour" *ngIf="item.router" routerLink="{{item.link}}">{{ item.name }}</a>
+            <a class="home-button nav-a-colour" *ngIf="!item.router" href="{{item.link}}" target="_blank">{{ item.name }}</a>
+        </nav>
+        <nav *ngIf="item.reactiveCompress">
+            <a class="wide-list nav-a-colour" *ngIf="item.router" routerLink="{{item.link}}">{{ item.name }}</a>
+            <a class="wide-list nav-a-colour" *ngIf="!item.router" href="{{item.link}}" target="_blank">{{ item.name }}</a>
+        </nav>
+    </li>
+    <li>
+        <i class="bi bi-list dropdown-icon" (click)="dropDownActive = !dropDownActive"></i>
+    </li>
 </ul>
 
-<ul class="bottom ui">
-    <li><nav><a routerLink="about">About</a></nav></li>
-    <li><nav><a routerLink="contact">Contact</a></nav></li>
-    <li><nav><a href="https://github.com/matthew-s-hutton/media-dl" target="_blank">Source Code</a></nav></li>
-    <li><nav><a href="https://github.com/matthew-s-hutton/media-dl/issues" target="_blank">Report a Bug</a></nav></li>
+<ul class="narrow-dropdown" *ngIf="dropDownActive" [@dropDown]>
+    <li *ngFor="let item of menuItems" class="narrow-list-item">
+        <nav *ngIf="item.reactiveCompress">
+            <a class="nav-a-colour" *ngIf="item.router" routerLink="{{item.link}}">{{ item.name }}</a>
+            <a class="nav-a-colour" *ngIf="!item.router" href="{{item.link}}" target="_blank">{{ item.name }}</a>
+        </nav>
+    </li>
 </ul>
+
+<div class="light-dark-container">
+    <i class="bi bi-moon" (click)="loadTheme('dark-styles.css')"></i>
+    <i class="bi bi-sun" (click)="loadTheme('light-styles.css')"></i>
+</div>

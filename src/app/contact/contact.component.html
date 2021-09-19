@@ -1,11 +1,14 @@
-<section class="mail-container">
-    <label for="mail-address">Email Address</label>
-    <input id="mail-address" [(ngModel)]="userData.mailAddress">
-    <label for="mail-subject">Subject</label>
-    <input id="mail-subject" [(ngModel)]="userData.mailSubject">
-    <label for="mail-body">Body</label>
-    <textarea id="mail-body" [(ngModel)]="userData.mailBody" class="mail-body"></textarea>
-    <button class="ui" (click)="sendEmailWrapper()">Send</button>
-</section>
+<p *ngIf="contactFormErr" [@dropDown] (@dropDown.done)="logError(contactFormErr)" class="error-dropdown">{{contactFormErr}}</p>
+<p *ngIf="contactFormSent" [@dropDown] (@dropDown.done)="infoDropDownDisappear()" class="info-dropdown">Email sent!</p>
 
-
+<form [formGroup]="contactForm" class="mail-container-colour">
+    <div formGroupName="contactData">
+        <label class="mail-label" for="mail-address">Email Address</label>
+        <input class="mail-inputs" id="mail-address" formControlName="mailAddress" required>
+        <label class="mail-label" for="mail-subject">Subject</label>
+        <input class="mail-inputs" id="mail-subject" formControlName="mailSubject" required>
+        <label class="mail-label" for="mail-body">Message</label>
+        <textarea class="mail-inputs" id="mail-body" formControlName="mailBody" required></textarea>
+        <button class="ui mail-button-colour" (click)="sendEmailWrapper()">Send</button>
+    </div>
+</form>

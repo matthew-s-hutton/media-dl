@@ -1,20 +1,18 @@
-* {
-    box-sizing: border-box;
-}
-
-.mail-container {
+div {
     border-radius: 5px;
-    background-color: #f2f2f2;
     padding: 20px;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+label {
+    font-size: 12px;
+}
+
 input, textarea {
     padding: 12px;
-    border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 6px;
     margin-bottom: 16px;
@@ -24,16 +22,21 @@ input, textarea {
 
 button {
     text-align: center;
-    color: white;
     border: none;
     text-align: center;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 13px;
     cursor: pointer;
     margin: 4px 2px;
-    padding: 15px 32px;
+    padding: 12px 16px;
+    border-radius: 4px;
 }
 
-button:hover {
-    background-color: rgb(123,155,188);
+@media only screen and (min-width: 768px) {
+    label {
+        font-size: 15px;
+    }
+    button {
+        font-size: 15px
+    }
 }

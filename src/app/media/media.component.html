@@ -1,9 +1,11 @@
 <div class="bg-thumbnail" [@bgFade]="bgState" (@bgFade.done)="bgFadeDone()" [ngStyle]="{'background-image': 'url(' + thumbnailUrl + ')'}"></div>
 
-<p *ngIf="dlErr" [@dropDownErr] (@dropDownErr.done)="logError(dlErr)">Something went wrong!</p>
-<div>
-  <label for="media-url">URL</label>
-  <input id="media-url" [(ngModel)]="mediaUrl" (keydown.enter)="downloadMedia(mediaUrl)" placeholder="twitter.com">
-</div>
+<p *ngIf="dlErr" [@dropDownErr] (@dropDownErr.done)="logError(dlErr)" class="error-dropdown">Something went wrong!</p>
+<form [formGroup]="mediaForm">
+  <div formGroupName="mediaData">
+    <label for="media-url">URL</label>
+    <input class="media-input-colour" id="media-url" formControlName="mediaUrl" (keydown.enter)="downloadMedia()" placeholder="twitter.com">
+  </div>
+</form>
 
 <a class="ui" *ngIf="downloadLocation" [@dropDownButton] (@dropDownButton.done)="toggleTxtState()" [@buttonTextFade]="txtState" href="{{downloadLocation}}" download>Download</a>

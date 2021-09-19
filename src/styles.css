@@ -1,9 +1,8 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-body {
-    background-color: rgb(179,180,187);
+    box-sizing: border-box;
 }
 
 p {
@@ -14,6 +13,24 @@ ul {
     font-size: 1.4em;
 }
 
-.ui {
-    background: rgb(73,79,82);
+.error-dropdown {
+    top: 35px;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    position: fixed;
+    font-size: 26px;
+    border: 10px;
+}
+
+.info-dropdown {
+    top: 35px;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    position: fixed;
+    font-size: 26px;
+    border: 10px;
 }

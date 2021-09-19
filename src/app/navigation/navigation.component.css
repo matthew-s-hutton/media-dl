@@ -1,5 +1,6 @@
-ul.top {
+.top {
     position: fixed;
+    z-index: 1;
     top: 0;
     width: 100%;
     margin: 0;
@@ -8,44 +9,79 @@ ul.top {
     list-style-type: none;
 }
 
-ul.top li {
+a {
+    padding: 14px 16px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
     float: left;
 }
 
-ul.top li nav a {
-    display: block;
-    color: white;
-    text-align: center;
+a, i {
+    font-size: 16px;
+}
+
+.wide-list {
+    display: none;
+}
+
+.dropdown-icon {
+    float: right;
+    cursor: pointer;
     padding: 14px 16px;
+    display: block;
+    text-align: center;
     text-decoration: none;
 }
 
-ul.top li nav a:hover {
-    background-color: rgb(123,155,188);
+@media only screen and (min-width: 768px) {
+    .wide-list {
+        display: block;
+    }
+
+    .dropdown-icon {
+        display: none;
+    }
 }
 
-ul.bottom {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+ul.narrow-dropdown {
+    width: 200px;
+    float: right;
+    position:fixed;
+    top: 43px;
     margin: 0;
+    right: 0;
     padding: 0;
-    left: 0;
     list-style-type: none;
-}
-
-ul.bottom li {
-    float: left;
-}
-
-ul.bottom li nav a {
+  }
+  
+.narrow-dropdown a {
     display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+    padding: 12px;
+    font-size: 16px;
     text-decoration: none;
+    width: 200px;
 }
 
-ul.bottom li nav a:hover {
-    background-color: rgb(123,155,188);
+.light-dark-container {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 5px;
+    background-color: rgba(146, 146, 146, 0.5);
+    border-radius: 4px;
+}
+
+.bi-moon, .bi-sun {
+    padding: 5px;
+}
+
+.bi-moon:hover {
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.bi-sun:hover {
+    color: goldenrod;
+    cursor: pointer;
 }

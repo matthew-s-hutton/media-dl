@@ -1,0 +1,75 @@
+/* Multiple */
+body {
+    background: rgb(250, 250, 250);
+}
+
+.ui {
+    background-color: rgb(123,155,188);
+}
+
+.ui:hover {
+    background-color: rgb(90, 114, 138);
+}
+
+.error-dropdown {
+    background-color: rgb(255, 105, 97);
+    color: rgb(41, 41, 41);
+}
+
+.info-dropdown {
+    background-color: #f2f2f2;
+    color: rgb(41, 41, 41);
+}
+
+/* Navigation */
+.nav-a-colour {
+    color: white;
+}
+
+.nav-a-colour:hover, .dropdown-icon:hover {
+    background-color: rgb(90, 114, 138);
+}
+
+.dropdown-icon {
+    color: white;
+}
+
+.narrow-dropdown {
+    background: rgb(100, 130, 160);
+}
+
+.top {
+    background-color: rgb(123,155,188);
+}
+
+/* About Page */
+.about-container-colour {
+    background-color: whitesmoke;
+}
+
+.about-text-colour {
+    color: rgb(133, 133, 133);
+}
+
+.about-hyperlink-colour {
+    color: rgb(73,79,82);
+}
+
+/* Contact Page */
+.mail-container-colour {
+    background-color: #f2f2f2;
+}
+
+.mail-inputs {
+    border: 1px solid #ccc;
+}
+
+.mail-button-colour {
+    color: white;
+}
+
+/* Media Page */
+.media-input-colour {
+    background-color: whitesmoke;
+    color: silver;
+}

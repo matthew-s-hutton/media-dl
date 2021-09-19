@@ -1,0 +1,82 @@
+/* Multiple */
+body {
+    background: rgb(61, 61, 61);
+}
+
+.ui {
+    background-color: rgb(43, 43, 43);
+}
+
+/* background-color: rgb(58, 58, 58) */
+
+.ui:hover {
+    background-color: rgb(94, 156, 219);
+}
+
+.error-dropdown {
+    background-color: rgb(216, 86, 79);
+    color: white;
+}
+
+.info-dropdown {
+    background-color: rgb(104, 184, 104);
+    color: white;
+}
+
+/* Navigation */
+.nav-a-colour {
+    color: white;
+}
+
+.nav-a-colour:hover, .dropdown-icon:hover {
+    background-color: rgb(94, 156, 219);
+}
+
+.dropdown-icon {
+    color: white;
+}
+
+.narrow-dropdown {
+    background: rgb(31, 31, 31);
+}
+
+.top {
+    background-color: rgb(43, 43, 43);
+}
+
+/* About Page */
+.about-container-colour {
+    background-color: rgb(110, 110, 110);
+}
+
+.about-text-colour {
+    color: white;
+}
+
+.about-hyperlink-colour {
+    color: rgb(163, 163, 163);
+}
+
+/* Contact Page */
+.mail-container-colour {
+    background-color: #f2f2f2;
+}
+
+.mail-inputs {
+    background-color: rgb(110, 110, 110);
+    border: 1px solid rgb(80, 80, 80);
+}
+
+.mail-label {
+    color: white;
+}
+
+.mail-button-colour {
+    color: white;
+}
+
+/* Media Page */
+.media-input-colour {
+    background-color: rgb(110, 110, 110);
+    color: white;
+}
