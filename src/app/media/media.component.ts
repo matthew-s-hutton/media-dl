@@ -39,7 +39,7 @@ export class MediaComponent implements OnInit {
   thumbnailUrl = ""
   newThumbnailUrl = this.thumbnailUrl
   downloadLocation = ""
-  dlErr = undefined
+  dlErr = ""
   bgState = 'bgIn'
   txtState = 'txtOut'
 
@@ -60,44 +60,36 @@ export class MediaComponent implements OnInit {
 
   /**
    * This method is used to call the {@link HandleMediaService | handle media service}.
-   * @returns 
    */
-  downloadMedia(): undefined {
+  downloadMedia(): void {
     const mediaData: MediaData = Object.assign(
       {}, this.mediaForm.value.mediaData
     );
-    console.log(this.mediaForm.value.mediaData)
-    //let urlObj;
     let url: string = mediaData.mediaUrl;
+    
     url.replace('http://', 'https://')
     if (!url.includes('https://')) {
       url = 'https://' + url;
     }
-    try {
-      var urlObj = new URL(url);
-    } catch (urlErr: any) {
-      this.dlErr = urlErr.message;
-      return;
-    }
+
+    const urlObj = new URL(url);
+
     this.mediaService.download(urlObj)
     .subscribe((data: any) => {
-      if ('dlError' in data) {
-        this.dlErr = data.dlError;
-        return;
-      } else {
-        this.dlErr = undefined;
-      }
       this.downloadLocation = "https://twt-dl.app/" + 
       data._filename.substring (
         data._filename.lastIndexOf('/') + 1
-      );
-
+      )
       this.newThumbnailUrl = data.thumbnail;
-
-      this.toggleBgState();
-    });
-    return;
-  }
+      },
+      err => {
+        this.dlErr = err;
+      },
+      () => {
+        this.toggleBgState();
+        this.dlErr = "";
+      })
+    }
 
   /**
    * Toggles the state of the bgFade animation.

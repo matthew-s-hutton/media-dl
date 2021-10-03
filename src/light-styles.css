@@ -13,12 +13,12 @@ body {
 
 .error-dropdown {
     background-color: rgb(255, 105, 97);
-    color: rgb(41, 41, 41);
+    color: white;
 }
 
 .info-dropdown {
     background-color: #f2f2f2;
-    color: rgb(41, 41, 41);
+    color: rgb(133, 133, 133);
 }
 
 /* Navigation */

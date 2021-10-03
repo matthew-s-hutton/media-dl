@@ -42,6 +42,10 @@ a, i {
     .dropdown-icon {
         display: none;
     }
+
+    ul.narrow-dropdown {
+        display: none;
+    }
 }
 
 ul.narrow-dropdown {

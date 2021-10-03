@@ -1,4 +1,4 @@
-<p *ngIf="contactFormErr" [@dropDown] (@dropDown.done)="logError(contactFormErr)" class="error-dropdown">{{contactFormErr}}</p>
+<p *ngIf="contactFormErr" [@dropDown] (@dropDown.done)="logError(contactFormErr)" class="error-dropdown">{{contactFormErrDisplay}}</p>
 <p *ngIf="contactFormSent" [@dropDown] (@dropDown.done)="infoDropDownDisappear()" class="info-dropdown">Email sent!</p>
 
 <form [formGroup]="contactForm" class="mail-container-colour">

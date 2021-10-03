@@ -24,6 +24,7 @@ export class ContactComponent implements OnInit {
   }
 
   contactFormErr = ""
+  contactFormErrDisplay = ""
   contactFormSent = false
 
   ngOnInit(): void {
@@ -43,9 +44,8 @@ export class ContactComponent implements OnInit {
 
   /**
    * Used to call the {@link SendMailService | send email service}.
-   * @returns 
    */
-  sendEmailWrapper(): undefined {
+  sendEmailWrapper(): void {
     const mailData: ContactData = Object.assign(
       {}, this.contactForm.value.contactData
     );
@@ -55,6 +55,7 @@ export class ContactComponent implements OnInit {
       mailData.mailBody
     ) {
       this.contactFormErr = "";
+      this.contactFormErrDisplay = "";
       const mailDataFormatted = {
         to: "up739898@myport.ac.uk",
         subject: `Twitter-DL Mail: ${mailData.mailSubject}`,
@@ -64,18 +65,17 @@ export class ContactComponent implements OnInit {
       };
       this.sendMailService.sendmail(mailDataFormatted).
       subscribe((data: any) => {
-        if ('error' in data) {
-          this.contactFormErr = "Something went wrong!"
-        } else {
-          this.contactFormSent = true;
-          console.log(data.info);
-        }
+        this.contactFormSent = true;
+        console.log(data.info);
+      },
+      err => {
+        this.contactFormErr = err;
+        this.contactFormErrDisplay = "Something went wrong!";
       })
     } else {
       this.contactFormErr = "Missing field in contact form.";
-      return;
+      this.contactFormErrDisplay = "Missing field in contact form.";
     }
-    return;
   }
 
     /**
